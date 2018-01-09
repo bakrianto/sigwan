@@ -1,0 +1,61 @@
+<div class="col-xs-12">
+	<div class="row menu-beranda">
+		<div class="container text-center">
+			<h5><strong>Sistem Informasi Geografi Fasilitas Kesehatan Hewan di Bantul</strong></h5>
+		</div>
+		<div class="container text-center">
+			<h3 class="btn btn-success btn-block klik_menu" id="puskeswan">Data Puskeswan</h3>
+		</div>
+		<div class="container text-center">
+			<h3 class="btn btn-success btn-block klik_menu" id="dokter">Data Dokter Hewan</h3>
+		</div>
+		<div class="container text-center">
+			<h3 class="btn btn-success btn-block klik_menu" id="toko">Data Unit Usaha Obat Hewan</h3>
+		</div>
+		<div class="container text-center">
+			<h3 class="btn btn-success btn-block klik_menu" id="profile">Profile</h3>
+		</div>
+		<div class="container pull-right">
+			<h3 class="btn btn-default logout">X</h3>
+		</div>
+	</div>
+	<div class="content">
+		
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+
+        //$('.status').html(localStorage.getItem("user_login"));
+
+		$('.klik_menu').click(function(){
+		var menu = $(this).attr('id');
+		if(menu == "puskeswan"){
+			$('.menu-beranda').hide();            	
+			$.ajax({url: "http://localhost/puskeswan/php/read_puskeswan.php", success: function(result){
+			    $(".content").html(result);
+			}});
+		}else if(menu == "dokter"){
+		    $('.menu-beranda').hide(); 
+			$.ajax({url: "http://localhost/puskeswan/php/read_dokter.php", success: function(result){
+		        $(".content").html(result);
+		    }});                        
+		}else if(menu == "toko"){
+		    $('.menu-beranda').hide();
+			$.ajax({url: "http://localhost/puskeswan/php/read_toko.php", success: function(result){
+		        $(".content").html(result);
+		    }});             
+		}else if(menu == "profile"){
+		    $('.menu-beranda').hide();
+			$('.content').load('profile.html');            
+		}
+		});
+
+		$(".logout").click(function() {
+        localStorage.clear();
+        $('#login').show();
+        $('#beranda').hide();
+    });		
+	});
+</script>

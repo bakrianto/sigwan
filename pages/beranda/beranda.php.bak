@@ -1,0 +1,25 @@
+<div class="container">
+    <img name="denah" src="dist/img/sig_2.jpg" width="1200" class="img-responsive" id="denah" usemap="#mydenah">
+</div>
+<div>
+    <map name="mydenah" id="mydenah">
+        <area shape="circle" coords="739,140, 32" href="" alt="Halaman" title="Halaman" />
+        <area shape="circle" coords="638,151, 32" href="" alt="Ruang Parkir" title="Ruang Parkir" />
+        <area shape="circle" coords="660,295, 31" href="" alt="Ruang Tamu" title="Ruang Tamu" />
+        <area shape="circle" coords="588,295, 33" href="" alt="Ruang TU" title="Ruang TU" />
+        <!-- <area shape="circle" coords="631,228, 32" href="javascript:;" alt="" title="Denah Map" /> -->
+        <area shape="circle" coords="564,215, 32" href="" alt="Ruang Kep. Sek" title="Ruang Kep. Sek" />
+        <area shape="circle" coords="598,155, 31" href="" alt="Ruang Kantin" title="Ruang Kantin" />
+        <area shape="circle" coords="540,133, 32" href="" alt="TKLB" title="TKLB" />
+        <area shape="circle" coords="561,68, 30" href="" alt="Gudang" title="Gudang" />
+        <area shape="circle" coords="57,451, 43" href="" alt="Ruang Kesenian" title="Ruang Kesenian" />
+        <area shape="circle" coords="66,369, 32" href="" alt="Ruang Ket. Salon" title="Ruang Ket. Salon" />
+        <area shape="circle" coords="174,113, 32" href="" alt="Ruang Ket. Boga" title="Ruang Ket. Boga" />
+        <area shape="circle" coords="135,218, 34" href="" alt="Kelas" title="Kelas" />
+        <area shape="circle" coords="103,291, 31" href="" alt="Ruang BK" tilte="Ruang BK" />
+        <area shape="circle" coords="33,299, 33" href="" alt="Kolam Renang" title="Kolam Renang" />
+        <area shape="circle" coords="68,223, 32" href="" alt="Ruang Komputer" title="Ruang Komputer" />
+        <area shape="circle" coords="103,149, 32" href="" alt="Kelas" title="Kelas" />
+        <area shape="circle" coords="116,83, 32" href="" alt="Ruang Guru" title="Ruang Guru" />
+    </map>
+</div>
