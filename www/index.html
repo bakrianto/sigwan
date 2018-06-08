@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>faskeswan</title>
+        <style>
+           #map {
+            height: 300px;
+            width: 100%;
+           }
+           #map-puskeswan {
+            height: 300px;
+            width: 100%;
+           }
+           #map-dokter {
+            height: 300px;
+            width: 100%;
+           }
+           #map-toko {
+            height: 300px;
+            width: 100%;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="container judul">
+            <div class="text-center">        
+                <h5>Sistem Informasi Geografis Fasilitas Kesehatan Hewan di Kabupaten Bantul</h5>
+            </div>
+        </div>
+        <div class="container kategori" id="kategori">
+            <div class="row text-center">
+                <div class="col">
+                <select class="form-control" name="kategori" id="kat">
+                    <option>-- Pilih --</option>
+                    <option value="puskeswan">Puskeswan</option>
+                    <option value="dokter">Dokter</option>
+                    <option value="toko">Toko</option>
+                </select>
+                </div>
+<!--                 <div class="col" style="padding: 0px;">
+                <select class="form-control" name="kec">
+                    <option>Kecamatan</option>
+                    <option>Bantul</option>
+                    <option>Sewon</option>
+                    <option>Kasihan</option>
+                </select>
+                </div> -->
+                <div class="col">
+                <p class="btn btn-outline-success cari">Terdekat ...</p>
+                </div>                
+            </div>
+        </div> 
+        <div class="container" id="map">
+            
+        </div>
+        <div class="menu" id="menu" style="padding-top: 3%;">
+                <h3 class="btn btn-outline-success btn-block btn-lg klik" id="puskeswan">Puskeswan</h3>
+                <h3 class="btn btn-outline-success btn-block btn-lg klik" id="dokter">Dokter</h3>
+                <h3 class="btn btn-outline-success btn-block btn-lg klik" id="toko">Toko Obat Hewan</h3>
+        </div>
+        <div class="content" id="content">
+            
+        </div>
+        <div class="content-2" id="content-2">
+            
+        </div>
+
+        <script>
+            $(document).ready(function() {
+
+                $('.cari').click(function(event) {
+                    event.preventDefault();
+                    var getMap = $("#kat").find(':selected').val();
+                    if (getMap == "puskeswan") {
+                        getMapPuskeswan();
+                        /*clearMarkersToko();*/
+                    } else if (getMap == "dokter") {
+                        getMapDokter();
+                        clearMarkersPuskeswan();
+                    } else if (getMap == "toko") {
+                        getMapToko();
+                        clearMarkersDokter();
+                    }
+
+                });
+                $('.klik').click(function(event) {
+                    event.preventDefault();
+                    var klik = $(this).attr('id');
+                    if (klik == "puskeswan") {
+                        $('.judul').hide();
+                        $('.kategori').hide();
+                        $('#map').hide();
+                        $('.menu').hide();
+                        $('.content').show();
+                        $.ajax({url: "http://puskeswan.batserver.xyz/php/read_puskeswan.php", success: function(result){
+                            $(".content").html(result);
+                        }});
+                    } else if (klik == "dokter") {
+                        $('.judul').hide();
+                        $('.kategori').hide();
+                        $('#map').hide();
+                        $('.menu').hide();
+                        $('.content').show();
+                        $.ajax({url: "http://puskeswan.batserver.xyz/php/read_dokter.php", success: function(result){
+                            $(".content").html(result);
+                        }});
+                    } else if (klik == "toko") {
+                        $('.judul').hide();
+                        $('.kategori').hide();
+                        $('#map').hide();
+                        $('.menu').hide();
+                        $('.content').show();
+                        $.ajax({url: "http://puskeswan.batserver.xyz/php/read_toko.php", success: function(result){
+                            $(".content").html(result);
+                        }});
+                    }
+                });
+
+
+            });
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKkxFtemefACUv_VbROr__6yPW6_a-wbE&callback=getMapLocation"></script>
+    </body>
+</html>

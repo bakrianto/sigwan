@@ -1,0 +1,6 @@
+[11-Jan-2018 06:15:09 UTC] PHP Parse error:  syntax error, unexpected 'fa' (T_STRING), expecting ',' or ';' in /home/puskeswan/public_html/php/detail_dokter.php on line 49
+[11-Jan-2018 06:15:15 UTC] PHP Parse error:  syntax error, unexpected 'fa' (T_STRING), expecting ',' or ';' in /home/puskeswan/public_html/php/detail_dokter.php on line 49
+[11-Jan-2018 06:15:28 UTC] PHP Parse error:  syntax error, unexpected 'fa' (T_STRING), expecting ',' or ';' in /home/puskeswan/public_html/php/detail_dokter.php on line 49
+[11-Jan-2018 06:15:44 UTC] PHP Parse error:  syntax error, unexpected 'fa' (T_STRING), expecting ',' or ';' in /home/puskeswan/public_html/php/detail_dokter.php on line 49
+[24-Jan-2018 03:24:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/puskeswan/public_html/php/detail_dokter.php:1) in /home/puskeswan/public_html/php/detail_dokter.php on line 2
+[24-Jan-2018 04:05:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/puskeswan/public_html/php/detail_dokter.php:1) in /home/puskeswan/public_html/php/detail_dokter.php on line 2
