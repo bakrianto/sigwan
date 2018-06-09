@@ -11,9 +11,9 @@
 		$_SESSION['level']=$user['level'];
 		$_SESSION['usernm']=$user['nama_lengkap'];
 		if ($user['level']=="admin") {
-			header("location:index.php?pg=users");
+			header("location:index.php?pg=beranda&data=puskeswan");
 		} elseif ($user['level']=="users") {
-			header("location:index.php?pg=beranda");
+			header("location:index.php?pg=beranda&data=puskeswan");
 		} else {
 			header("location:index.php?msg=Username/Password Salah");
 		}

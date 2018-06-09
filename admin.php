@@ -35,6 +35,9 @@
         <div class="container">
             <ul class="nav navbar-nav">
                 <li>
+                <a href="index.php?pg=beranda&data=puskeswan"> Beranda</a>
+                </li>
+                <li>
                 <a href="index.php?pg=users"> Data Admin</a>
                 </li>
                 <li>
@@ -52,20 +55,6 @@
                 <li>
                 <a class="show" href="index.php?pg=jam"> Jam Buka</a>
                 </li>
-                <!-- <li>
-                <a class="show" href="index.php?pg=organisasi"><i class="fa fa-users"></i> Organisasi</a>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Organisasi<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="index.php?pg=organisasi_komite">Komite Sekolah</a></li>
-                    <li><a href="index.php?pg=organisasi_struktur">Struktur Organisasi</a></li>
-                    <li><a href="index.php?pg=organisasi_yayasan">Pengurus Yayasan</a></li>
-                    </ul>
-                </li>
-                <li>
-                <a href="index.php?pg=buku"><i class="glyphicon glyphicon-book"></i> Buku Tamu</a>
-                </li> -->
             </ul>
         </div>
     </div> 
